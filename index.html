@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al Server</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('Minecraft.ttf'); 
+        }
+        
+        body {
+
+            background-size: cover;
+            background-position: center;
+            font-family: 'Minecraft', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative; 
+            z-index: 1; 
+        }
+        
+        
+        .centered-image {
+            display: block; 
+            margin: 0 auto;
+            max-width: 50%; 
+            height: auto; 
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        
+          .btn-minecraft-link {
+            text-decoration: none; 
+            width: auto; 
+        }
+        
+        .btn-minecraft {
+            background-color: #727272;
+            color: rgb(247,247,247);
+            width: 400px; 
+            padding: .5rem 0;
+            margin-top: 2rem;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+            font-size: 1.5rem;
+            letter-spacing: .025rem;
+            border: 2px solid rgba(0, 0, 0, 1);
+            box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.5),
+                        inset -3px -3px 0 rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        
+        .btn-minecraft:hover {
+            background-color: rgba(115, 107, 221, 1); 
+        }
+        
+        .btn-minecraft:focus {
+            color: rgb(246,246,44);
+            outline: none;
+        }
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            overflow: hidden;
+        }
+        
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('mojana.webp'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; 
+            color: white; 
+            font-family: 'Minecraft', sans-serif; 
+        }
+        
+        .loading-bar-container {
+            position: absolute;
+            bottom: 50px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%; 
+            background-color: transparent; 
+            border: 2px solid white; 
+            padding: 3px; 
+        }
+        
+        .loading-bar {
+            height: 20px; 
+            background-color: white; 
+            width: 0%; 
+            transition: width 5s linear;
+        }
+        
+        
+        
+    </style>
+    <body>
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-bar-container">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+        </div>
+        
+        
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="minecraft.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+        <div class="container">
+            <img src="foto2.png" alt="foto2" class="centered-image">
+            <br><br><br><br>
+            <a href="pagina2.html" class="btn-minecraft-link">
+                <button class="btn-minecraft">
+                    <span>Info del Server</span>
+                </button>
+            </a>
+        </div>
+        <script>
+            window.addEventListener('load', function() {
+                var loadingBar = document.getElementById('loading-bar');
+                if (loadingBar) {
+                    loadingBar.style.width = '100%'; 
+                }
+    
+                setTimeout(function() {
+                    var loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.display = 'none';
+                    }
+                }, 5000); 
+            });
+        </script>
+        
+        
+    </body>
+</head> 
+   
